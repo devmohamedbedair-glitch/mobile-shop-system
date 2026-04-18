@@ -1,0 +1,30 @@
+﻿@model List<MobileShop.Models.Invoice>
+
+<h2>Invoices</h2>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Total</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Date</td>
+            <td>@item.TotalAmount</td>
+            <td>
+                <a href="/Invoices/Details/@item.Id" class="btn btn-info">Details</a>
+            </td>
+
+        </tr>
+    }
+
+
+
+</table>
+
+
+

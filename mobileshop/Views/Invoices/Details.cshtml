@@ -1,0 +1,24 @@
+﻿<h2>Invoice Details</h2>
+
+<p><strong>ID:</strong> @Model.Id</p>
+<p><strong>Date:</strong> @Model.Date</p>
+<p><strong>Total:</strong> @Model.TotalAmount</p>
+
+<table class="table">
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>
+
+<button onclick="window.print()" class="btn btn-dark">🖨️ Print</button>

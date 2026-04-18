@@ -1,0 +1,38 @@
+﻿@model List<MobileShop.Models.Product>
+
+<h2>Products</h2>
+
+<a href="/Products/Create" class="btn btn-primary">Add Product</a>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Quantity</td>
+            <td>@item.Category</td>
+            <td> 
+                
+                <td>
+                <a href="/Products/Edit/@item.Id" class="btn btn-warning">Edit</a>
+                <a href="/Products/Delete/@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+
+            </td>
+
+           
+        </tr>
+    }
+
+</table>
+
+
